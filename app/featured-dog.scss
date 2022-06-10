@@ -1,0 +1,52 @@
+.featured-dog {
+    padding: $main-spacing;
+    border: 1px solid $border-color;
+    box-shadow: 5px 10px #888888;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    }
+
+    .featured-dog__wrapper {
+        flex: 1;
+        height: 400px;
+        min-width: 250px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .featured-dog__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background-image: url("https://images.dog.ceo/breeds/waterdog-spanish/20180723_185544.jpg");
+
+        min-width: 400px;
+        width: 110%;
+        height: 110%;
+        background-size: cover;
+
+        margin: -5%;
+        padding: $main-spacing;
+        filter: blur(10px);
+    }
+
+    .featured-dog__image {
+        position: relative;
+        z-index: 2;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .featured-dog__description {
+        flex: 1;
+        padding: 0 $main-spacing;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
