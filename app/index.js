@@ -4,9 +4,17 @@ const URL = "https://dog.ceo/api"
 const breedsContainer = document.querySelector('.items');
 const imgBackground = document.querySelector(' .featured-dog__background')
 const imgSrc = document.querySelector('img')
+const spinner = document.querySelector('.spinner')
 
+    const showLoading = () => {
+        spinner.classList.add('spinner--visible')
+    }
+    const closeLoading = () => {
+        spinner.classList.remove('spinner--visible')
+    }
 
     const getRandomImage = () => {
+        showLoading()
         fetch(`${URL}/breeds/image/random`)
         .then(resp => resp.json())
         .then(data => {
@@ -14,23 +22,26 @@ const imgSrc = document.querySelector('img')
             
             imgSrc.setAttribute('src', data.message)
             imgBackground.style.background = `url("${data.message}")`
-
+            closeLoading()
         })
     }
 
     const getImagebyBreed = (type) => {
+        showLoading()
         fetch(`${URL}/breed/${type}/images/random`)
         .then(resp => resp.json())
         .then(data => {
 
             imgSrc.setAttribute('src', data.message)
             imgBackground.style.background = `url("${data.message}")`
+            closeLoading()
         })
     }
 
 
 
     const breedsList = () => {
+        showLoading()
         fetch(`${URL}/breeds/list/all`)
         .then(resp => resp.json())
         .then(data => {
@@ -38,7 +49,7 @@ const imgSrc = document.querySelector('img')
         const allBreeds = data.message;
 
         showBreeds(allBreeds);
-
+        closeLoading();
         })
     }
 
@@ -73,6 +84,7 @@ const imgSrc = document.querySelector('img')
             `
             breedsContainer.appendChild(newItem)   
             newItem.addEventListener('click', () => {
+                window.scrollTo(0, 0);
                 getImagebyBreed(type);
             })
     }
@@ -94,8 +106,6 @@ const imgSrc = document.querySelector('img')
         }
     
     }
-
-
 
 breedsList()
 document.addEventListener("DOMContentLoaded", getRandomImage())
