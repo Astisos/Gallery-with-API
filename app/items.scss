@@ -5,16 +5,16 @@
 }
 
     .items__title {
+        flex-basis: 33%;
         padding: 0 $main-spacing;
         margin-bottom: $main-spacing;
-        flex-basis: 33%;
     }
     
     .items__title-content {
         background-color: $primary-color;
         padding: $main-spacing;
-        color: $title-text-color;
         text-align: center;
+        color: $title-text-color;
         cursor: pointer;
         transition: 0.5s;
         &:hover {

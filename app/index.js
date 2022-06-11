@@ -19,12 +19,12 @@ const spinner = document.querySelector('.spinner')
         .then(resp => resp.json())
         .then(data => {
 
-            
             imgSrc.setAttribute('src', data.message)
             imgBackground.style.background = `url("${data.message}")`
             closeLoading()
         })
     }
+
 
     const getImagebyBreed = (type) => {
         showLoading()
@@ -37,7 +37,6 @@ const spinner = document.querySelector('.spinner')
             closeLoading()
         })
     }
-
 
 
     const breedsList = () => {
@@ -57,19 +56,13 @@ const spinner = document.querySelector('.spinner')
 
     const addBreed = (breed, subBreed) => {
 
-       // console.log(breed, subBreed)
        let name;
        let type;
 
         if (typeof subBreed === "undefined") {
-            // console.log(`1 czlonowa nazwa: ${breed}`)
-
             name = breed;
             type = breed;
-
         } else {
-            // console.log(`2-czlonowa nazwa: ${breed, subBreed}`)
-
             name = `${breed} ${subBreed}`;
             type = `${breed}/${subBreed}`;
         }
@@ -93,14 +86,11 @@ const spinner = document.querySelector('.spinner')
     const showBreeds = (allBreeds) => {
 
         for (const breed in allBreeds) {
-            // console.log(breed, allBreeds[breed]);
             if (allBreeds[breed].length === 0) {
                 addBreed(breed)
             } else {
-                // console.log(allBreeds[breed])
                 for (const subBreed of allBreeds[breed]) {
                     addBreed(breed, subBreed)
-                    // console.log(breed + '/' + subBreed)
                 }
             }
         }

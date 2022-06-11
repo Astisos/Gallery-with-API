@@ -1,8 +1,8 @@
 .featured-dog {
+    display: flex;
     padding: $main-spacing;
     border: 1px solid $border-color;
     box-shadow: 5px 10px #888888;
-    display: flex;
     }
 
     .featured-dog__wrapper {
@@ -20,14 +20,10 @@
         position: absolute;
         top: 0;
         left: 0;
-
-        // background-image: url("https://images.dog.ceo/breeds/waterdog-spanish/20180723_185544.jpg");
-
         min-width: 400px;
         width: 110%;
         height: 110%;
         background-size: cover;
-
         margin: -5%;
         padding: $main-spacing;
         filter: blur(10px);
