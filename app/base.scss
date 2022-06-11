@@ -1,7 +1,14 @@
 @import "variables";
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: rgb(248,248,248);
+    font-size: $base-font-size;
+    font-family: 'Poppins', sans-serif;
+    color: $text-color;
 }
 
 .container {
@@ -9,10 +16,4 @@ body {
     max-width: $max-width;
     margin: 0 auto;
     text-align: center;
-    h1 {
-        font-family: 'Roboto', sans-serif;
-    }
-    h2 {
-        font-family: 'Poppins', sans-serif;
-    }
 }
